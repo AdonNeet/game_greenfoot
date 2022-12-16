@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Set up base World
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @contributor Bara, Dizzo 
+ * @version v1.1
  */
 public class MyWorld extends World
 {
@@ -15,7 +15,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 300x500 cells with a cell size of 1x1 pixels.
         super(300,500 ,1); 
         prepare();
     }
@@ -25,10 +25,13 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        // set speed in default (50 from range 1-100), d16m12y2022
+        Greenfoot.setSpeed(50);
+        // init object, d15m12y2022
         start start = new start();
         addObject(start,149,261);
         bird bird = new bird();
-       addObject(bird,148,309);
+        addObject(bird,148,309);
         base base = new base();
         addObject(base,144,495);
     }

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class bird here.
+ * Objek utama yang dimainkan oleh pemain
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @contributor Bara, Dizzo
+ * @version v1.0
  */
 public class bird extends Actor
 {   
@@ -15,14 +15,14 @@ public class bird extends Actor
     int count = 0;
     public void act()
     {
-        // Add your action code here.
+        // Ketika player belum memulai game, d15m12y2022
         if(count == 0){
             if(Greenfoot.isKeyDown("space")){
                 count++;
             }else{
                 setLocation(getX(),getY());
             }
-        }else{
+        }else{ //Ketika player sudah memulai game, d15m12y2022
             if(Greenfoot.isKeyDown("space")){
                 setLocation(getX(),getY()-4);
                 setRotation(-45);

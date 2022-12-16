@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class start here.
+ * Objek yang menampilkan tampilan awal permainan
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @contributor Bara, Dizzo
+ * @version v1.0
  */
 public class start extends Actor
 {
@@ -16,7 +16,7 @@ public class start extends Actor
     
     public void act()
     {
-        // Add your action code here.
+        // Ketika player sudah memulai permainan akan menghilangkan objek start, d15m12y2022
         if(Greenfoot.isKeyDown("space")){
             getWorld().removeObject(this);
         }
