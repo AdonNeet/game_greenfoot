@@ -33,5 +33,14 @@ public class bird extends Actor
                 setRotation(45);
             }        
         }
+        
+        if(isTouching(base.class)){
+            getWorld().addObject(new gameOver(), getWorld().getWidth()/2, getWorld().getHeight()/2);
+            Greenfoot.stop();
+        }
+        
+        if(Greenfoot.isKeyDown("r")){
+                Greenfoot.start();
+        }
     }
 }
