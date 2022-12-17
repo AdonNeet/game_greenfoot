@@ -13,23 +13,15 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    int pipe = 0;
-    
+    static int pipe = 0;
+    boolean start = false; 
     public MyWorld()
     {    
-        // Create a new world with 300x500 cells with a cell size of 1x1 pixels.
+        // Membangun dunia baru ke settingan default ketika dimulai dan di reset
         super(300,500 ,1); 
+        pipe = 0;
         prepare();
-        
-        // Respawn pipe otomatis
-        while(pipe < 3){  
-        int y = Greenfoot.getRandomNumber(150)+50;
-        addObject(new pipe(), 300,y);
-        // nilai oobjek aliens bertambah 1
-        pipe++;
-        // delay selama beberapa detik
-        Greenfoot.delay(3);
-        }    }
+    }
     
     /**
      * Prepare create the initial objects and add them to the world.
@@ -37,7 +29,7 @@ public class MyWorld extends World
     private void prepare()
     {
         // set speed in default (50 from range 1-100), d16m12y2022
-        Greenfoot.setSpeed(50);
+        Greenfoot.setSpeed(55);
         // init object, d15m12y2022
         start start = new start();
         addObject(start,149,261);
@@ -48,6 +40,24 @@ public class MyWorld extends World
     }
     
     public void act(){
-        ;
+        // Mendeteksi permainan jika sudah dimulai
+        if(Greenfoot.isKeyDown("space")){
+            start = true;   
+        }
+        
+        // Respawn pipe otomatis
+        if(pipe < 1 && start==true){  
+        int gacha = Greenfoot.getRandomNumber(1);
+        if(gacha == 0){
+            // set koordinat spawn objek dan letak pipe
+            int y = Greenfoot.getRandomNumber(150)+350;
+            addObject(new longPipe(), 300,y);
+            setPaintOrder(base.class, longPipe.class);
+            
+            // nilai oobjek pipe bertambah 1
+            pipe++;
+        }
+        }
+         
     }
 }
