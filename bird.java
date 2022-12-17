@@ -24,17 +24,17 @@ public class bird extends Actor
             }
         }else{ //Ketika player sudah memulai game, d15m12y2022
             if(Greenfoot.isKeyDown("space")){
-                setLocation(getX(),getY()-3);
+                setLocation(getX(),getY()-4);
                 setRotation(-45);
             }
             else{
-                setLocation(getX(),getY()+2);
+                setLocation(getX(),getY()+3);
                 Greenfoot.delay(1);
                 setRotation(45);
             }        
         }
         
-        if(isTouching(base.class) || isTouching(longPipe.class) || isTouching(pipe.class)){
+        if(isTouching(base.class) || isTouching(longPipe.class) || isTouching(longPipeC.class)){
             // Menampilkan gambar GameOver dan memposisikan letaknya
             getWorld().addObject(new gameOver(), getWorld().getWidth()/2, getWorld().getHeight()/2);
             getWorld().setPaintOrder(gameOver.class, base.class);

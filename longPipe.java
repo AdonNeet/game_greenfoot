@@ -15,7 +15,7 @@ public class longPipe extends Actor
     public void act()
     {
          // pipa panjang bergerak ke kiri
-        setLocation(getX()-1,getY());
+        setLocation(getX()-2,getY());
         
         // jika pipa panjang sudah berada di pojok kiri, maka pipa akan hilang
         if(getX()==0){
@@ -23,4 +23,5 @@ public class longPipe extends Actor
             getWorld().removeObject(this);
         }
     }
+
 }
