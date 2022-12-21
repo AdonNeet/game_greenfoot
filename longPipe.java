@@ -17,6 +17,10 @@ public class longPipe extends Actor
          // pipa panjang bergerak ke kiri
         setLocation(getX()-2,getY());
         
+        // sistem penambah skore
+        if((getX()==(getWorld().getWidth()/2)+1) && ((MyWorld.end==false))){
+            MyWorld.skore.add(1);
+        }
         // jika pipa panjang sudah berada di pojok kiri, maka pipa akan hilang
         if(getX()==0){
             MyWorld.pipe--;

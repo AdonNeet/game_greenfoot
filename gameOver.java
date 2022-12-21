@@ -16,6 +16,7 @@ public class gameOver extends Actor
     {
         // Ketika mereset game ingame 
         if(Greenfoot.isKeyDown("r")){
+                // skore.setValue(0);
                 Greenfoot.setWorld(new MyWorld());
         }
     }

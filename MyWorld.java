@@ -13,14 +13,23 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    static int pipe = 0;
-    boolean start = false; 
+    static Counter skore =  new Counter("Score : ");
+    
+    // init data dan attribut
+    static int level = 1;
+    static int temp = 2;
+    static int n = 0;
+    static int pipe = n;
+    int sign = 0;
+    boolean start = false;
+    static boolean end = false;
+    
     public MyWorld()
     {    
         // Membangun dunia baru ke settingan default ketika dimulai dan di reset
         super(300,500 ,1); 
-        pipe = 0; 
-        start = false;
+        pipe = 0; sign = 0;
+        start = false; end = false;
         prepare();
     }
     
@@ -38,16 +47,24 @@ public class MyWorld extends World
         addObject(bird,148,309);
         base base = new base();
         addObject(base,144,495);
+        
+        // nilai awal dari skore
+        skore.setValue(0);
     }
     
     public void act(){
         // Mendeteksi permainan jika sudah dimulai
         if(Greenfoot.isKeyDown("space")){
-            start = true;   
+            start = true;
+            if(sign==0){
+                // letak dari objek counter skore
+                addObject(skore, 50, 20);
+                sign++;
+            }
         }
         
         // Respawn pipe otomatis
-        if(pipe < 1 && start==true){  
+        if(pipe < n && start==true){  
         int gacha = Greenfoot.getRandomNumber(2);
             if(gacha == 1){
                 // set koordinat spawn objek di bawah dan letak pipe
@@ -59,11 +76,17 @@ public class MyWorld extends World
                 pipe++;
             }else{
                 // set koordinat spawn objek di atas dan letak pipe
-                int y = Greenfoot.getRandomNumber(190);
+                int y = Greenfoot.getRandomNumber(160);
                 addObject(new longPipeC(), 300,y);
                 // nilai oobjek pipe bertambah 1
                 pipe++;
             }
         } 
+        
+        // pengatur tingkat rate kemunculan pipa
+        if(skore.getValue()%5==0 && level==temp){
+            n++;
+            
+        }
     }
 }
