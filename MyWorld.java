@@ -18,7 +18,7 @@ public class MyWorld extends World
     // init data dan attribut
     static int level = 1;
     static int temp = 2;
-    static int n = 0;
+    static int n = 1;
     static int pipe = n;
     int sign = 0;
     boolean start = false;
@@ -78,15 +78,10 @@ public class MyWorld extends World
                 // set koordinat spawn objek di atas dan letak pipe
                 int y = Greenfoot.getRandomNumber(160);
                 addObject(new longPipeC(), 300,y);
+                setPaintOrder(Counter.class, longPipeC.class);
                 // nilai oobjek pipe bertambah 1
                 pipe++;
             }
         } 
-        
-        // pengatur tingkat rate kemunculan pipa
-        if(skore.getValue()%5==0 && level==temp){
-            n++;
-            
-        }
     }
 }
