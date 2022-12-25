@@ -16,6 +16,9 @@ public class MyWorld extends World
     static Counter skore =  new Counter("");
     
     // init data dan attribut
+    GreenfootSound bg = new GreenfootSound("backsoundgame.mp3");
+    static GreenfootSound tambah = new GreenfootSound("menambahSkor.mp3");
+    static GreenfootSound mati = new GreenfootSound("untukMati.mp3");
     static int level = 1;
     static int temp = 2;
     static int n = 1;
@@ -37,9 +40,9 @@ public class MyWorld extends World
      * Prepare create the initial objects and add them to the world.
      */
     private void prepare()
-    {
+    {   
         // set speed in default (50 from range 1-100), d16m12y2022
-        Greenfoot.setSpeed(50);
+        Greenfoot.setSpeed(50); 
         // init object, d15m12y2022
         start start = new start();
         addObject(start,149,261);
@@ -59,6 +62,7 @@ public class MyWorld extends World
             if(sign==0){
                 // letak dari objek counter skore
                 addObject(skore, 150, 40);
+                bg.playLoop();
                 sign++;
             }
         }
