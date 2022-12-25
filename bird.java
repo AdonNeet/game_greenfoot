@@ -13,6 +13,7 @@ public class bird extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int count = 0;
+    
     public void act()
     {
         // Ketika player belum memulai game, d15m12y2022
@@ -25,13 +26,13 @@ public class bird extends Actor
         }else{ //Ketika player sudah memulai game, d15m12y2022
             if(Greenfoot.isKeyDown("space")){
                 setLocation(getX(),getY()-4);
-                setRotation(-45);
+                setRotation(-25);
             }
             else{
-                setLocation(getX(),getY()+3);
-                Greenfoot.delay(1);
-                setRotation(45);
-            }        
+                setLocation(getX(),getY()+3);  
+                setRotation(25);
+            }
+      
         }
         
         if(isTouching(base.class) || isTouching(longPipe.class) || isTouching(longPipeC.class)){

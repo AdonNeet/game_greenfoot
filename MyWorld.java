@@ -13,7 +13,7 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    static Counter skore =  new Counter("Score : ");
+    static Counter skore =  new Counter("");
     
     // init data dan attribut
     static int level = 1;
@@ -47,7 +47,7 @@ public class MyWorld extends World
         addObject(bird,148,309);
         base base = new base();
         addObject(base,144,495);
-        
+
         // nilai awal dari skore
         skore.setValue(0);
     }
@@ -58,7 +58,7 @@ public class MyWorld extends World
             start = true;
             if(sign==0){
                 // letak dari objek counter skore
-                addObject(skore, 50, 20);
+                addObject(skore, 150, 40);
                 sign++;
             }
         }
