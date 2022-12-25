@@ -28,7 +28,7 @@ public class MyWorld extends World
     {    
         // Membangun dunia baru ke settingan default ketika dimulai dan di reset
         super(300,500 ,1); 
-        sign = 0;
+        sign = 0; pipe = 0;
         start = false; end = false;
         prepare();
     }
