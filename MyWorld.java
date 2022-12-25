@@ -16,13 +16,10 @@ public class MyWorld extends World
     static Counter skore =  new Counter("");
     
     // init data dan attribut
-    GreenfootSound bg = new GreenfootSound("backsoundgame.mp3");
+    static GreenfootSound bg = new GreenfootSound("backsoundgame.mp3");
     static GreenfootSound tambah = new GreenfootSound("menambahSkor.mp3");
     static GreenfootSound mati = new GreenfootSound("untukMati.mp3");
-    static int level = 1;
-    static int temp = 2;
-    static int n = 1;
-    static int pipe = n;
+    static int pipe = 0; 
     int sign = 0;
     boolean start = false;
     static boolean end = false;
@@ -31,7 +28,7 @@ public class MyWorld extends World
     {    
         // Membangun dunia baru ke settingan default ketika dimulai dan di reset
         super(300,500 ,1); 
-        pipe = 0; sign = 0;
+        sign = 0;
         start = false; end = false;
         prepare();
     }
@@ -55,6 +52,21 @@ public class MyWorld extends World
         skore.setValue(0);
     }
     
+    // bagian summon tower
+    public void summonA(){
+        // set koordinat spawn objek di atas dan letak pipe
+        int y = Greenfoot.getRandomNumber(160);
+        addObject(new longPipeC(), 300,y);
+        setPaintOrder(Counter.class, longPipeC.class);
+    }
+    public void summonB(){
+        // set koordinat spawn objek dan letak pipe
+        int y = Greenfoot.getRandomNumber(150)+350;
+        addObject(new longPipe(), 300,y);
+        setPaintOrder(base.class, longPipe.class);
+            
+    }
+
     public void act(){
         // Mendeteksi permainan jika sudah dimulai
         if(Greenfoot.isKeyDown("space")){
@@ -68,24 +80,17 @@ public class MyWorld extends World
         }
         
         // Respawn pipe otomatis
-        if(pipe < n && start==true){  
-        int gacha = Greenfoot.getRandomNumber(2);
+        if(pipe<1 && start==true){  
+            int gacha = Greenfoot.getRandomNumber(2);
             if(gacha == 1){
-                // set koordinat spawn objek di bawah dan letak pipe
-                int y = Greenfoot.getRandomNumber(150)+350;
-                addObject(new longPipe(), 300,y);
-                setPaintOrder(base.class, longPipe.class);
-            
-                // nilai oobjek pipe bertambah 1
+                summonB();
+                // nilai objek pipe bertambah 1
                 pipe++;
             }else{
-                // set koordinat spawn objek di atas dan letak pipe
-                int y = Greenfoot.getRandomNumber(160);
-                addObject(new longPipeC(), 300,y);
-                setPaintOrder(Counter.class, longPipeC.class);
-                // nilai oobjek pipe bertambah 1
+                summonA();
+                // nilai objek pipe bertambah 1
                 pipe++;
             }
-        } 
+        }
     }
 }

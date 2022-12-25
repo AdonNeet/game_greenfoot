@@ -18,6 +18,7 @@ public class gameOver extends Actor
         if(Greenfoot.isKeyDown("r")){
                 // skore.setValue(0);
                 Greenfoot.setWorld(new MyWorld());
+                MyWorld.bg.stop();
         }
     }
 }

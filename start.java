@@ -20,7 +20,5 @@ public class start extends Actor
         if(Greenfoot.isKeyDown("space")){
             getWorld().removeObject(this);
         }
-    
-        
     }
 }

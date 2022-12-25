@@ -21,10 +21,8 @@ public class longPipeC extends Actor
          // sistem penambah skore
         if((getX()==(getWorld().getWidth()/2+1)) && (MyWorld.end==false)){
             MyWorld.skore.add(1);
-            if(!MyWorld.tambah.isPlaying())        
-            {
-                MyWorld.tambah.play();
-            }
+            // Memainkan efek suara skor bertamba
+            MyWorld.tambah.play();
         }
         
         // jika pipa panjang sudah berada di pojok kiri, maka pipa akan hilang

@@ -39,10 +39,9 @@ public class bird extends Actor
             // Menampilkan gambar GameOver dan memposisikan letaknya
             getWorld().addObject(new gameOver(), getWorld().getWidth()/2, getWorld().getHeight()/2);
             getWorld().setPaintOrder(gameOver.class, base.class);
-            if(!MyWorld.mati.isPlaying())        
-            {
+            
+            // Memainkan efek suara mati
             MyWorld.mati.play();
-            }
             // menandakan bahwa game sudah berakhir
             MyWorld.end = true;
             
