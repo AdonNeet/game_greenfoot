@@ -1,7 +1,15 @@
 #BlueJ class context
 comment0.target=MyWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Set\ up\ base\ World\r\n\ \r\n\ @contributor\ Bara,\ Dizzo\ \r\n\ @version\ v1.1\r\n
 comment1.params=
 comment1.target=MyWorld()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
-numComments=2
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\r\n\ Prepare\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment3.params=
+comment3.target=void\ summonA()
+comment4.params=
+comment4.target=void\ summonB()
+comment5.params=
+comment5.target=void\ act()
+numComments=6
