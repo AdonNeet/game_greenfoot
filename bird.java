@@ -36,9 +36,8 @@ public class bird extends Actor
         }
         
         if(isTouching(base.class) || isTouching(longPipe.class) || isTouching(longPipeC.class)){
-            // Menampilkan gambar GameOver dan memposisikan letaknya
+            // Menampilkan gambar GameOver
             getWorld().addObject(new gameOver(), getWorld().getWidth()/2, getWorld().getHeight()/2);
-            getWorld().setPaintOrder(gameOver.class, base.class);
             
             // Memainkan efek suara mati
             MyWorld.mati.play();

@@ -20,5 +20,7 @@ public class gameOver extends Actor
                 Greenfoot.setWorld(new MyWorld());
                 MyWorld.bg.stop();
         }
+        // Mengatur letak
+        getWorld().setPaintOrder(gameOver.class, base.class);
     }
 }
