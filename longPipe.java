@@ -30,5 +30,4 @@ public class longPipe extends Actor
             getWorld().removeObject(this);
         }
     }
-
 }

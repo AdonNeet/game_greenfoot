@@ -68,6 +68,10 @@ public class Counter extends Actor
             value--;
             updateImage();
         }
+        
+        // Agar tampilan counter di depan pipa
+        getWorld().setPaintOrder(Counter.class, base.class);
+        //getWorld().setPaintOrder(Counter.class, longPipeC.class);
     }
 
     /**

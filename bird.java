@@ -16,14 +16,14 @@ public class bird extends Actor
     
     public void act()
     {
-        // Ketika player belum memulai game, d15m12y2022
+        // Ketika player belum memulai game
         if(count == 0){
             if(Greenfoot.isKeyDown("space")){
                 count++;
             }else{
                 setLocation(getX(),getY());
             }
-        }else{ //Ketika player sudah memulai game, d15m12y2022
+        }else{ //Ketika player sudah memulai game
             if(Greenfoot.isKeyDown("space")){
                 setLocation(getX(),getY()-4);
                 setRotation(-25);

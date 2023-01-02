@@ -16,9 +16,12 @@ public class gameOver extends Actor
     {
         // Ketika mereset game ingame 
         if(Greenfoot.isKeyDown("r")){
-                // skore.setValue(0);
                 Greenfoot.setWorld(new MyWorld());
+                // Mematikan suara latar belakang
                 MyWorld.bg.stop();
         }
+        
+        // Agar tampilan game over di depan pipa
+        getWorld().setPaintOrder(gameOver.class, base.class);
     }
 }
